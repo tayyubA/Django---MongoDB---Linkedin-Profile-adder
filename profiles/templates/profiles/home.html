@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Profile Generator</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'profiles/home.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Profile Generator</h1>
+    </header>
+
+    <div class="container">
+        <p>Start creating your professional profile in just a few steps!</p>
+        <a href="{% url 'create_profile' %}">
+            <button>Create Profile</button>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 LinkedIn Profile Manager</p>
+    </footer>
+
+</body>
+</html>

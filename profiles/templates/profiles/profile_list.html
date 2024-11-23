@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'profiles/profile_list.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Profile List</h1>
+    </header>
+
+    <div class="container">
+        <ul>
+            {% for profile in profiles %}
+                <li>
+                    <strong>Name:</strong> {{ profile.name }} <br>
+                    <strong>Email:</strong> {{ profile.email }} <br>
+                    <strong>Headline:</strong> {{ profile.headline }} <br>
+                    <strong>Skills:</strong> {{ profile.skills|join:', ' }} <br>
+
+                </li>
+            {% empty %}
+                <li class="empty-message">No profiles available.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 LinkedIn Profile Manager</p>
+    </footer>
+
+</body>
+</html>
